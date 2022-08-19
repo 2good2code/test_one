@@ -1,9 +1,7 @@
 # .github/workflows/scheduled-builds.yml
 name: Trigger Site Rebuild on a CRON Schedule
 
-on:
-  schedule:
-    - cron: '* * * * *'
+on: push
 jobs:
   build:
     name: Trigger Site Rebuild
